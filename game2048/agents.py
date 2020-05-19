@@ -1,6 +1,5 @@
 import numpy as np
 
-
 class Agent:
     '''Agent Base.'''
 
@@ -23,6 +22,20 @@ class Agent:
 
     def step(self):
         direction = int(input("0: left, 1: down, 2: right, 3: up = ")) % 4
+        return direction
+
+class MyAgent(Agent):
+
+    def __init__(self, game, display=None, modelpath):
+        if game.size != 4:
+            raise ValueError(
+                "`%s` can only work with game of `size` 4." % self.__class__.__name__)
+        super().__init__(game, display)
+        import torch
+        self.model = torch.load(modelpath)
+    
+    def step(self):
+        direction = self.model(self.game.board)
         return direction
 
 
