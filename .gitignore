@@ -105,6 +105,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-explore.ipynb
 .vscode/settings.json
-EE369_fingerprint.json
+.gitignore
