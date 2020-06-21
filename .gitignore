@@ -108,7 +108,3 @@ venv.bak/
 explore.ipynb
 .vscode/settings.json
 EE369_fingerprint.json
-rl.out
-game2048/RL.err
-game2048/RL.out
-game2048/run.sh
